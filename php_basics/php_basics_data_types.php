@@ -24,3 +24,21 @@ echo "HexaDecimal number: " .$hexa_int . "\n";
 echo "\n+++++++\n";
 echo " Object";
 echo "\n+++++++\n";
+class newclass {
+   function newFunction() {
+    $new_var = "Hello World! \n";
+    echo $new_var ;
+   }
+}
+$new_obj = new newclass();
+$new_obj -> newFunction();
+
+echo "\n+++++++\n";
+echo " Array and Array Sorting";
+echo "\n+++++++\n";
+$new_arr = array(22,50,30);
+var_dump($new_arr);
+sort($new_arr);
+var_dump($new_arr);
+rsort($new_arr);
+var_dump($new_arr);
