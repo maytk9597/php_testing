@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+}
+h2 {
+  font-size: 30px;
+  color: #351e10;
+}
+label {
+  font-size: 25px;
+  color: #552c0c;
+}
+form {
+  padding-top: 10px;
+}
+input {
+  font-size: 18px;
+  background-color: #e0b686;
+  padding: 5px;
+}
+p {
+  color: #552c0c;
+  font-size: 30px;
+}
