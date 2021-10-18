@@ -2,7 +2,10 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial 01</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,7 +17,12 @@
       for ($column = 0; $column < 8; $column++) {
         $total = $row + $column;
         if ($total % 2 == 0) {
-          echo "<td bgcolor = #ffffff></td>";
+         /* ?>
+          <td class="white"></td>
+          <?php
+          */
+          echo " <td class=white></td>";
+          // echo "<td bgcolor = #ffffff></td>";
         } else {
           echo "<td bgcolor = #000000></td>";
         }

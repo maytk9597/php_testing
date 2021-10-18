@@ -1,0 +1,21 @@
+form {
+  font-size: 24px;
+  text-align: center;
+}
+input {
+  display: block;
+  font-size: 16px;
+  margin: 20px;
+  margin: 5% 44%;
+}
+#fileToUpload {
+  margin: 0px 38%;
+  padding-top: 3%;
+}
+h3 {
+  text-align: center;
+}
+p {
+  text-align: center;
+  margin: 0;
+}
