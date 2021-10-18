@@ -1,0 +1,23 @@
+body {
+ text-align: center;
+ background-color: honeydew;
+}
+div {
+  margin: 20%;
+  padding: 17% 0%;
+  background-color: lightskyblue;
+}
+input {
+  padding: 2%;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 3%;
+  display: block;
+}
+button {
+  font-size: 17px;
+  padding: 1% 5%;
+}
+p {
+  color: red;
+}
