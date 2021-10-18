@@ -8,32 +8,32 @@
     $row = 6;
     $space = 2 * $row;
 
-    for ($i = 0; $i <= $row; $i++) {
-      for ($j = 0; $j <= $space; $j++) {
+    for ($space_loop = 0; $space_loop <= $row; $space_loop++) {
+      for ($star_loop = 0; $star_loop <= $space; $star_loop++) {
         echo "<span>&nbsp</span>";
       }
 
-      if ($i === 0) {
-        $star = $i;
+      if ($space_loop === 0) {
+        $star = $space_loop;
       } else {
-        $star = 2 * $i - 1;
+        $star = 2 * $space_loop - 1;
       }
 
-      for ($j = 0; $j < $star; $j++) {
+      for ($star_loop = 0; $star_loop < $star; $star_loop++) {
         echo "<span>*</span>";
       }
       echo "</br>";
       $space = $space - 2;
     }
     $space = 2;
-    for ($i = $row - 1; $i >= 0; $i--) {
-      for ($j = 0; $j <= $space; $j++) {
+    for ($space_loop = $row - 1; $space_loop >= 0; $space_loop--) {
+      for ($star_loop = 0; $star_loop <= $space; $star_loop++) {
         echo "<span>&nbsp</span>";
       }
 
-      $star = 2 * $i - 1;
+      $star = 2 * $space_loop - 1;
 
-      for ($j = 0; $j < $star; $j++) {
+      for ($star_loop = 0; $star_loop < $star; $star_loop++) {
         echo "<span>*</span>";
       }
       echo "</br>";
