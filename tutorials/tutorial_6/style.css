@@ -1,0 +1,26 @@
+form {
+  text-align: center;
+  font-size: 25px;
+  color: rosybrown;
+}
+input {
+ font-size: 15px;
+  margin: 0 auto;
+  margin: 20px 41%;
+  display: block;
+}
+.submit {
+  margin: 20px 46%;
+}
+#fileToUpload {
+  padding: 20px 0px;
+  margin: 0 41%;
+  color: rebeccapurple;
+}
+p {
+  color: green;
+  font-size: 20px;
+}
+.error {
+  color: red;
+}
