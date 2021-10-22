@@ -6,10 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create_Tutorial8</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <?php require_once "process.php" ?>
+  <h2>Add New Students To Table</h2>
   <form method="POST">
     <label for="name">Name</label>
     <input type="text" name="name">
@@ -25,16 +27,9 @@
     $email = $_POST['email'];
     $mark = $_POST["mark"];
     if ($name == '' or $email == '' or $mark == '') {
-      echo "All fields are require";
+      echo "<p class = error>All fields are require</p>";
     } else {
-      $query = "insert into users(name,mark,email) values('$name','$mark','$email')";
-      $add = mysqli_query($con, $query);
-      if (!$add) {
-        echo mysqli_error($con);
-      } else {
-
-        echo "<p>User Added successfully</p>";
-      }
+      add_data($con,$name,$mark,$email);
     }
   }
 
@@ -80,6 +75,7 @@
       ?>
     </table>
   </div>
+  <h2>Edit Students Infomation</h2>
   <form method="POST">
     <label for="edit_id">ID</label>
     <input type="text" name="edit_id">
@@ -97,14 +93,14 @@
     $edit_email = $_POST['edit_email'];
     $edit_mark = $_POST["edit_mark"];
     $edit_id = $_POST["edit_id"];
-    if ($edit_name == '' or $edit_email == '' or $edit_mark == '' or $ediot_id = "") {
-      echo "<p>Fields can't be empty</p>";
+    if ($edit_name == '' or $edit_email == '' or $edit_mark == '' or $edit_id == "") {
+      echo "<p class= error>Fields can't be empty</p>";
     } else {
       update_data($con, $edit_id, $edit_email, $edit_name, $edit_mark);
     }
   }
   ?>
-
+ <h2>Delete Student using ID</h2>
   <form method="POST">
     <label for="delete_id">ID</label>
     <input type="text" name="delete_id">
@@ -113,10 +109,13 @@
   <?php
   if (isset($_POST['Delete'])) {
     $delete_id = $_POST['delete_id'];
-    if ($delete_id = "") {
-      echo "<p>Field can't be empty</p>";
+
+    if ($delete_id == "") {
+      echo "<p class = error>Field can't be empty</p>";
     } else
+    {
       delete_data($con, $delete_id);
+    }
   }
   ?>
 </body>

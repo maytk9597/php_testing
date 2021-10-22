@@ -1,0 +1,31 @@
+input {
+width: 18%;
+margin-top: 20px;
+}
+form {
+  text-align: left;
+  color: firebrick;
+}
+h2 {
+  color: brown;
+}
+p {
+  color: green;
+}
+.error {
+  color: red;
+}
+table {
+  border-collapse: collapse;
+   width: 100%;
+}
+table tr td {
+  border: 1px solid brown;
+  padding: 10px 10px;
+ 
+}
+button {
+  background: antiquewhite;
+  padding: 2px 15px;
+  border: 1px solid brown;
+}
