@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,11 +20,13 @@
         body {
             font-family: 'Lato';
         }
+
         .fa-btn {
             margin-right: 6px;
         }
     </style>
 </head>
+
 <body id="app-layout">
     <nav class="navbar navbar-default">
         <div class="container">
@@ -45,4 +48,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
+
 </html>
