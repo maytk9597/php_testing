@@ -29,7 +29,7 @@
     if ($name == '' or $email == '' or $mark == '') {
       echo "<p class = error>All fields are require</p>";
     } else {
-      add_data($con,$name,$mark,$email);
+      add_data($con, $name, $mark, $email);
     }
   }
 
@@ -55,13 +55,8 @@
             <td><?php echo $fetchData[$row]['name']; ?></td>
             <td><?php echo $fetchData[$row]['mark']; ?></td>
             <td><?php echo $fetchData[$row]['email']; ?></td>
-
-
-
-
           </tr>
         <?php
-
         }
       } else {
         ?>
@@ -70,8 +65,6 @@
         </tr>
       <?php
       }
-
-
       ?>
     </table>
   </div>
@@ -100,7 +93,7 @@
     }
   }
   ?>
- <h2>Delete Student using ID</h2>
+  <h2>Delete Student using ID</h2>
   <form method="POST">
     <label for="delete_id">ID</label>
     <input type="text" name="delete_id">
@@ -112,8 +105,7 @@
 
     if ($delete_id == "") {
       echo "<p class = error>Field can't be empty</p>";
-    } else
-    {
+    } else {
       delete_data($con, $delete_id);
     }
   }

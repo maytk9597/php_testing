@@ -1,3 +1,6 @@
+body {
+  text-align: center;
+}
 form {
   font-size: 24px;
   text-align: center;
@@ -28,4 +31,7 @@ tr {
 }
 td {
   border: 1px solid black;
+}
+div {
+  text-align: center;
 }
