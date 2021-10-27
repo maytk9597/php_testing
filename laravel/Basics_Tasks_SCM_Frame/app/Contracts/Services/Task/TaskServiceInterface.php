@@ -2,8 +2,6 @@
 
 namespace App\Contracts\Services\Task;
 
-use Illuminate\Http\Request;
-
 interface TaskServiceInterface
 {
     /**
@@ -21,8 +19,8 @@ interface TaskServiceInterface
 
     /**
      * To add new task
-     * @param Request $request request to add new task
+     * @param array $validated Validated values from request
      * @return View home
      */
-    public function addTask(Request $request);
+    public function addTask($validated);
 }

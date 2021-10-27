@@ -4,8 +4,6 @@ namespace App\Services\Task;
 
 use App\Contracts\Dao\Task\TaskDaoInterface;
 use App\Contracts\Services\Task\TaskServiceInterface;
-use GuzzleHttp\Psr7\Request;
-use Illuminate\Http\Request as HttpRequest;
 
 class TaskService implements TaskServiceInterface
 {
@@ -28,6 +26,7 @@ class TaskService implements TaskServiceInterface
      */
     public function getTaskList()
     {
+
         return $this->taskDao->getTaskList();
     }
 
@@ -43,11 +42,11 @@ class TaskService implements TaskServiceInterface
 
     /**
      * To add new task
-     * @param Request $request request to add new task
+     * @param array $validated Validated values from request
      * @return View home
      */
-    public function addTask(HttpRequest $request)
+    public function addTask($validated)
     {
-        return $this->taskDao->addTask($request);
+        return $this->taskDao->addTask($validated);
     }
 }

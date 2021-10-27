@@ -1,24 +1,24 @@
 <?php
 
+use App\Http\Controllers\Task\TaskController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Task;
-use Illuminate\Http\Request;
+
 
 
 /**
  * Show Task Dashboard
  */
 
-Route::get('/', 'App\Http\Controllers\Task\TaskController@showTaskList');
+Route::get('/',  [TaskController::class, 'showTaskList']);
 
 /**
  * Add New Task
  */
 
-Route::post('/task', 'App\Http\Controllers\Task\TaskController@AddTask');
+Route::post('/task', [TaskController::class, 'AddTask']);
 
 /**
  * Delete Task
  */
 
-Route::delete('/task/{id}', 'App\Http\Controllers\Task\TaskController@deleteTask');
+Route::delete('/task/{id}', [TaskController::class, 'deleteTask']);

@@ -2,7 +2,6 @@
 
 namespace App\Contracts\Dao\Task;
 
-use Illuminate\Http\Request;
 
 /**
  * Interface of Data Access Object for task
@@ -18,14 +17,13 @@ interface TaskDaoInterface
     /**
      * To delete task
      * @param string $id of Task
-     * @return View Task List
+     * @return Object $delete delete object
      */
     public function deleteTask($id);
 
     /**
-     * To add new task
-     * @param Request $request request to add new task
-     * @return View home
+     * To add new task * @param array $validated Validated values from request
+     * @return Object $task task object
      */
-    public function addTask(Request $request);
+    public function addTask($validated);
 }
