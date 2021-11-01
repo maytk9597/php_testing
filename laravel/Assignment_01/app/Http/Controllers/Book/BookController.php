@@ -128,4 +128,31 @@ class BookController extends Controller
             return redirect()->route('booklist');
         }
     }
+    /**
+     * To search from Book list
+     *
+     * @return View Book list
+     */
+    public function searchBookList()
+    {
+        $keyword = $_GET['keyword'];
+        $bookList = $this->bookInterface->searchBookList($keyword);
+        info($bookList);
+        return view('book.list', compact('bookList'));
+    }
+    /*
+     * To search from book List
+     * @return View Book List
+     */
+    public function searchBookListBetweenDate()
+    {
+        $start = $_GET['start'];
+        $end = $_GET['end'];
+        info($start);
+        info($end);
+        $start = date("Y-m-d", strtotime($start));
+        $end = date("Y-m-d", strtotime($end));
+        $bookList = $this->bookInterface->searchBookListBetweenDate($start, $end);
+        return view('book.list', compact('bookList'));
+    }
 }

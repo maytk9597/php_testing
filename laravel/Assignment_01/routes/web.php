@@ -30,3 +30,5 @@ Route::post('/book/edit/{id}', [BookController::class, 'submitBookEditView'])->n
 Route::get('/book/download', [BookController::class, 'downloadbookCSV'])->name('downloadbookCSV');
 Route::post('/book/upload', [BookController::class, 'submitUpload'])->name('post.upload');
 Route::get('/book/upload', [BookController::class, 'showUploadView'])->name('post.upload');
+Route::get('/book/search', [BookController::class, 'searchBookList'])->name('searchbooklist');
+Route::get('/book/searchWithDate', [BookController::class, 'searchBookListBetweenDate'])->name('searchBookListBetweenDate');

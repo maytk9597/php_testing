@@ -108,4 +108,23 @@ class BookService implements BookServiceInterface
             config('path.separator'), $validated['csv_file'], $fileName);
         return $this->bookDao->uploadCSV($validated);
     }
+    /*
+    * To searh from book list 
+    * @param string $keyword to search
+    * @return array $bookList Book list
+    */
+    public function searchBookList($keyword)
+    {
+        return $this->bookDao->searchBookList($keyword);
+    }
+    /**
+     * To search from book List
+     * @param string $start as start date
+     * @param string $end as end date
+     * @return array $bookList list of books
+     */
+    public function searchBookListBetweenDate($start, $end)
+    {
+        return $this->bookDao->searchBookListBetweenDate($start, $end);
+    }
 }

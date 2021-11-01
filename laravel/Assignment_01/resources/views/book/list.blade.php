@@ -15,11 +15,34 @@
             <div class="card">
                 <div class="card-header">{{ __('Post List') }}</div>
                 <div class="card-body">
+                    </form>
                     <div class="row mb-2 search-bar">
+                        <form action="{{ route('searchBookListBetweenDate')}}" type="get" class="search">
+                            <div class="search-date row m-0">
+                                <label class="p-2 search-lbl">From </label>
+                                <input class="search-input mb-2 form-control" type="date" name="start" required />
+                            </div>
+                            <div class="search-date row m-0">
+                                <label class="p-2 search-lbl">To </label>
+                                <input class="search-input mb-2 form-control" type="date" name="end" required />
+                            </div>
+                            @csrf
+                            @method('GET')
+                            <button class="btn btn-primary mb-2 search-btn" type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div class="row mb-2 search-bar">
+                        <form action="{{ route('searchbooklist')}}" type="get" class="search">
+                            <label class="p-2 search-lbl">Keyword </label>
+                            <input class="search-input mb-2 form-control" type="text" name="keyword" />
+                            @csrf
+                            @method('GET')
+                            <button class="btn btn-primary mb-2 search-btn" type="submit">Search</button>
 
-                        <a class="btn btn-primary header-btn" href="/book/create">{{ __('Create') }}</a>
-                        <a class="btn btn-primary header-btn" href="/book/download">{{ __('Download') }}</a>
-                        <a class="btn btn-primary header-btn" href="/book/upload">{{ __('Upload') }}</a>
+
+                            <a class="btn btn-primary header-btn" href="/book/create">{{ __('Create') }}</a>
+                            <a class="btn btn-primary header-btn" href="/book/download">{{ __('Download') }}</a>
+                            <a class="btn btn-primary header-btn" href="/book/upload">{{ __('Upload') }}</a>
                     </div>
                     <table class="table table-hover" id="post-list">
                         <thead>

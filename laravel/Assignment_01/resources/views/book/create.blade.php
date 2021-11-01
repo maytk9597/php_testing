@@ -64,7 +64,7 @@
                             <label for="releaseDate" class="col-md-4 col-form-label text-md-right required">{{ __('Release Date') }}</label>
 
                             <div class="col-md-6">
-                                <input id="releaseDate" type="text" class="form-control @error('releaseDate') is-invalid @enderror" name="releaseDate" autocomplete="releaseDate" value="{{ old('releaseDate') }}"></date>
+                                <input id="releaseDate" type="date" class="form-control @error('releaseDate') is-invalid @enderror" name="releaseDate" autocomplete="releaseDate" value="{{ old('releaseDate') }}"></date>
                                 @error('releaseDate')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

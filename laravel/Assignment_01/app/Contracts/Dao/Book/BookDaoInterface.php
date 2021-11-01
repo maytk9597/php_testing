@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 interface BookDaoInterface
 {
+    /**
+     * To get book list
+     * @return array $bookList Book list
+     */
     public function getBookList();
     /**
      * To delete book
@@ -39,4 +43,17 @@ interface BookDaoInterface
      * @return array $content Message and Status of CSV Uploaded or not
      */
     public function uploadCSV($validated);
+    /**
+     * To delete from book List
+     * @param string $keywork as search keyword
+     * @return array $bookList list of books
+     */
+    public function searchBookList($keyword);
+    /**
+     * To search from book List
+     * @param string $start as start date
+     * @param string $end as end date
+     * @return array $bookList list of books
+     */
+    public function searchBookListBetweenDate($start, $end);
 }

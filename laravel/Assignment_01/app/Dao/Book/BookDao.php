@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class BookDao implements BookBookDaoInterface
 {
+    /**
+     * To get book list
+     * @return array $bookList Book list
+     */
     public function getBookList()
     {
         $bookList =  DB::table('books')
@@ -129,5 +133,41 @@ class BookDao implements BookBookDaoInterface
             'message' => 'Uploaded Successfully!'
         );
         return $content;
+    }
+    /**
+     * To search from book List
+     * @param string $keywork as search keyword
+     * @return array $bookList list of books
+     */
+    public function searchBookList($keyword)
+    {
+        $bookList = DB::table('books')
+            ->whereNull('books.deleted_at')
+            ->where('title', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('type', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('price', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('quantity', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('releaseDate', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('author_id', 'LIKE', '%' . $keyword . '%')
+            ->get();
+        return $bookList;
+    }
+    /**
+     * To search from book List
+     * @param string $start as start date
+     * @param string $end as end date
+     * @return array $bookList list of books
+     */
+    public function searchBookListBetweenDate($start, $end)
+    {
+        info($start);
+        info($end);
+        $bookList = DB::table('books')
+            ->whereNull('books.deleted_at')
+            ->where('created_at', '>=', $start)
+            ->where('created_at', '<=', $end)
+            ->get();
+        info($bookList);
+        return $bookList;
     }
 }
