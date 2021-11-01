@@ -1,13 +1,13 @@
 /**
  * To set data table
  */
-$(document).ready(function() {
+$(document).ready(function () {
     const postTable = $("#post-list").DataTable({
         sDom: "lrtip"
     });
 
-    $("#search-click").click(function() {
-      postTable.search($("#search-keyword").val()).draw();
+    $("#search-click").click(function () {
+        postTable.search($("#search-keyword").val()).draw();
     });
 });
 
@@ -62,7 +62,7 @@ async function deletePostById(csrf_token) {
             _token: csrf_token
         },
         dataType: "text",
-        success: function(result) {
+        success: function (result) {
             console.log(result);
             location.reload();
         }
