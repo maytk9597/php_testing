@@ -1,0 +1,21 @@
+.header-btn {
+    color: white !important;
+    padding: 6px 10px;
+    height: 37px;
+    margin: 0px 5px;
+    width: 150px;
+  }
+  .search {
+    display: flex;
+    align-items: flex-start;
+  }
+  .search-input {
+    margin-right: 0.5rem;
+  }
+  .search-lbl {
+    margin-right: 0.5rem;
+  }
+  .search-date {
+      display: flex;
+      flex-wrap: nowrap;
+  }
