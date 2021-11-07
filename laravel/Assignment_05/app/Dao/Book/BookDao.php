@@ -139,15 +139,22 @@ class BookDao implements BookBookDaoInterface
      */
     public function searchBookList($keyword)
     {
-        $bookList = DB::table('books')
-            ->whereNull('books.deleted_at')
-            ->where('title', 'LIKE', '%' . $keyword . '%')
-            ->orWhere('type', 'LIKE', '%' . $keyword . '%')
-            ->orWhere('price', 'LIKE', '%' . $keyword . '%')
-            ->orWhere('quantity', 'LIKE', '%' . $keyword . '%')
-            ->orWhere('releaseDate', 'LIKE', '%' . $keyword . '%')
-            ->orWhere('author_id', 'LIKE', '%' . $keyword . '%')
-            ->get();
+        // $bookList = DB::table('books')
+        //     ->whereNull('books.deleted_at')
+        //     ->where('title', 'LIKE', '%' . $keyword . '%')
+        //     ->orWhere('type', 'LIKE', '%' . $keyword . '%')
+        //     ->orWhere('price', 'LIKE', '%' . $keyword . '%')
+        //     ->orWhere('quantity', 'LIKE', '%' . $keyword . '%')
+        //     ->orWhere('releaseDate', 'LIKE', '%' . $keyword . '%')
+        //     ->orWhere('author_id', 'LIKE', '%' . $keyword . '%')
+        //     ->get();
+        $bookList = DB::select(DB::raw("SELECT * FROM books WHERE title= '$keyword' 
+        or type='$keyword' 
+        or price='$keyword' 
+        or quantity='$keyword'
+        or author_id='$keyword'
+        and deleted_at = null"));
+
         return $bookList;
     }
     /**
